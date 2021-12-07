@@ -9,6 +9,7 @@
   --main-title-color: #212121;
   --second-title-color: #212121;
   --links-color: rgba(255, 255, 255, 0.6);
+  --function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -593,10 +594,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  transition: opacity 300ms, isibility 300ms;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  transform: 
+  transform: translate(-50%, -50%) scale(1.1);
 }
 .modal {
   width: 500px;
@@ -606,8 +612,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 300px;
+  transform: translate(-50%, -50%)  scale(1);
+  transition: transform 500px;
 }
 .modal-close {
   position: absolute;
@@ -621,6 +627,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.close-icon {
+  fill: var(--first-logo-color);
+}
+.close-icon:hover 
+.close-icon:focus {
+fill: var(--accent-color);
 }
 .is-hidden {
   visibility: hidden;
