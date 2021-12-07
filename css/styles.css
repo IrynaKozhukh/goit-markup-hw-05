@@ -596,11 +596,12 @@ body {
   left: 0;
   opacity: 1;
   visibility: visible;
-  transition: visibility 500ms;
+  transition: visibility 500ms, opacity 500ms;
 }
 .backdrop.is-hidden {
   visibility: hidden;
   pointer-events: none;
+  opacity: 0;
 }
 .modal.is-hidden {
   transform: translate(-50%, -50%) scale(1.1);
